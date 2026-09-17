@@ -60,7 +60,7 @@ export const generateEmail = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => emailSchema.parse(data))
   .handler(async ({ data }) => {
     const { callStructured } = await import("./gateway.server");
-    const prompt = buildEmailPrompt(data);
+    const prompt = buildEmailPrompt({ ...data, senderName: data.senderName ?? "" });
     try {
       const result = await callStructured<EmailResult>({ ...prompt, schema: schemas.email });
       return { ok: true as const, data: result };
@@ -73,7 +73,7 @@ export const summarizeMeeting = createServerFn({ method: "POST" })
   .inputValidator((data: unknown) => meetingSchema.parse(data))
   .handler(async ({ data }) => {
     const { callStructured } = await import("./gateway.server");
-    const prompt = buildMeetingPrompt(data);
+    const prompt = buildMeetingPrompt({ ...data, title: data.title ?? "" });
     try {
       const result = await callStructured<MeetingResult>({ ...prompt, schema: schemas.meeting });
       return { ok: true as const, data: result };
