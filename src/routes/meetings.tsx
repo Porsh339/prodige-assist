@@ -188,7 +188,7 @@ function MeetingsPage() {
             <div className="panel-card p-5">
               <EmptyState
                 title="No summary yet"
-                body="Paste your notes on the left and summarize. You'll get a structured digest with decisions, owners and deadlines you can copy straight into a follow-up."
+                body="Paste your notes and summarize. You'll get a structured digest with decisions, owners and deadlines you can copy straight into a follow-up."
               />
             </div>
           )}
