@@ -294,7 +294,7 @@ function PlannerPage() {
             <div className="panel-card p-5">
               <EmptyState
                 title="No plan yet"
-                body="Add your tasks on the left with deadlines, urgency and importance. You'll get a ranked list and a time-blocked schedule you can copy into your calendar."
+                body="Add your tasks with deadlines, urgency and importance. You'll get a ranked list and a time-blocked schedule you can copy into your calendar."
               />
             </div>
           )}
